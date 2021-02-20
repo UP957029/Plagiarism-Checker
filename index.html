@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compitable" content="IE-edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Plagiarisim Checker</title>
+
+<style media="screen">
+    #button1 {
+     padding: 10px;
+     color: White;
+     background-color: rgb(115, 115, 235);
+     border: 1px solid black;
+     border-radius: 5px;
+     cursor: pointer;
+    } 
+
+    #button2{
+     padding: 10px;
+     color: White;
+     background-color: rgb(115, 115, 235);
+     border: 1px solid black;
+     border-radius: 5px;
+     cursor: pointer;
+
+    }
+
+    #button1:hover{
+        background-color: rgb(179, 179, 236);
+    }
+
+    #button2:hover{
+     background-color: rgb(179, 179, 236);
+     }
+
+    #Custom-text1{
+     margin-left: 10px;
+     font-family: sans-serif;
+     color: white;
+    }
+
+    #Custom-text2{
+     margin-left: 10px;
+     font-family: sans-serif;
+     color: white;
+    }
+
+    .divider{
+        height: 40px;
+    }
+ </style>
+
+
+
+ 
+</head>
+<body>
+    
+<header>
+   <h1 class="headerTitle">Plagiarisim Checker</h1> 
+</header>
+
+
+<div class="following">
+<h1 class="following-title" style="color:white"> Check Code For Plagiarisim</h1>
+<p class="following-sub" style="color: white;"> Ensuring there is no Plagiarisim between code in javascript files</p>
+</div>
+
+<main>
+<h1>Submit Files</h1>
+<div class="file-submission">
+    <input type="file" id="file1" style="display: none;" accept="application/javascript"/>
+    <button type="button" id="button1">Choose file 1</button>
+    <span id="#Custom-text1">No file chosen yet</span>
+    <div class="divider">
+    </div>
+    <input type="file" id="file2" style="display: none;" accept="application/javascript" />
+    <button type="button" id="button2">Choose file 2</button>
+    <span id="#Custom-text2">No file chosen yet</span>
+    <div class="divider">
+     </div>
+     <button type="submit" class="btn btn-primary" style="background-color: grey;" id="compareBtn">Compare</button>
+        </div>   
+        <div id="code report">
+        </div>
+</main>
+
+<aside>
+<h1>Code Similarity Report</h1>
+<p>This will be where the code report will be. It will show the 
+percent of similarity between all files compared to the first input file</p>
+
+
+</aside>
+
+
+
+
+
+
+<script>
+
+const file1Btn = document.getElementById('file1');
+    const file2Btn = document.getElementById('file2');
+    const btn1 = document.getElementById('button1');
+    const btn2 = document.getElementById('button2');
+    const customText = document.getElementById('#Custom-text1');
+    const customText2 = document.getElementById('#Custom-text2')
+
+    btn1.addEventListener('click',function(){
+        file1Btn.click();
+    } )
+
+    btn2.addEventListener('click', function(){
+        file2Btn.click()
+    })
+
+    file1Btn.addEventListener('change', function(){
+        if(file1Btn.value){
+            customText.textContent = file1Btn.value
+        }else{
+            customText.textContent = "No file chosen"
+        }
+        
+    })
+
+    file2Btn.addEventListener('change', function(){
+        if(file2Btn.value){
+            customText2.textContent = file2Btn.value
+        }else{
+            customText2.textContent = "No file chosen"
+        }
+    })
+
+
+
+</script>
+
+
+</body>
+
+    
+
+
+
+
+
+
+</html>

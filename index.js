@@ -14,13 +14,14 @@ let codeReport = document.getElementById('codeReport')
 codeReport.textContent = '';
 
 for (let i = 0; i , files.length;i++){
-    let id = files[i].id
     let name = files[i].name
     let similarity = files[i].similarity
-    let percent = files[i].percent
+    let size = files[i].size 
 
-    files.textContent += 'div class="well"'+
-                        '<h4> Report ID: '  + id + '</h4>'+
-                          ''
+    codeReport.textContent += '<tr>'
+                            + name + 
+                            similarity + 
+                            size +  '</tr>'
+
 }
 }
